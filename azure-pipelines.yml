@@ -21,9 +21,8 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 - task: CopyFiles@2
-  inputs:    
-    sourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**/$(BuildConfiguration)/**/?(*.war)'
+  inputs:        
+    Contents: '**/*.war'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
